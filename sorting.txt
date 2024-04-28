@@ -1,0 +1,378 @@
+@bubble sort
+
+def performBubbleSort(nums):
+    n = len(nums)
+    # n = 6
+    # 5 4 3 2 1 
+    for fixThisIndex in range(n - 1, 0, -1):
+        # some logic
+        for index in range(fixThisIndex):
+            # 0 1 2 3 4 
+            if nums[index] > nums[index + 1]:
+                temp = nums[index]
+                nums[index] = nums[index + 1]
+                nums[index + 1] = temp
+        print(nums)
+ 
+nums = [12, 2, 34, 20, 56, 43, 45, 100, 89, 50]
+#nums = list(map(int, input().split()))
+print("Before sorting:")
+print(nums)
+ 
+# logic to perform sorting 
+ 
+performBubbleSort(nums)
+ 
+print("After sorting:")
+print(nums)
+ 
+
+
+@selection
+
+ #Sortings 
+ 
+# 1. Bubble sort 
+# 2. Selection sort 
+# 3. Insertion sort 
+# 4. Merge sort 
+# 5. Quick sort
+ 
+# Before sorting:
+# [12, 2, 34, 20, 56, 43, 45, 100, 89, 50]
+ 
+# [2, 12, 20, 34, 43, 45, 56, 89, 50, 100]
+# [2, 12, 20, 34, 43, 45, 56, 50, 89, 100]
+# [2, 12, 20, 34, 43, 45, 50, 56, 89, 100]
+# [2, 12, 20, 34, 43, 45, 50, 56, 89, 100]
+# [2, 12, 20, 34, 43, 45, 50, 56, 89, 100]
+# [2, 12, 20, 34, 43, 45, 50, 56, 89, 100]
+# [2, 12, 20, 34, 43, 45, 50, 56, 89, 100]
+# [2, 12, 20, 34, 43, 45, 50, 56, 89, 100]
+# [2, 12, 20, 34, 43, 45, 50, 56, 89, 100]
+# After sorting:
+# [2, 12, 20, 34, 43, 45, 50, 56, 89, 100]
+ 
+# Sortings 
+ 
+# 1. Bubble sort 
+# 2. Selection sort 
+# 3. Insertion sort 
+# 4. Merge sort 
+# 5. Quick sort 
+ 
+def performSelectionSort(nums):
+    n = len(nums)
+    # n = 6
+    # 5 4 3 2 1 
+    for fixThisIndex in range(n - 1, 0, -1):
+        # some logic
+        maxEle = nums[fixThisIndex]
+        maxEleIndex = fixThisIndex 
+ 
+        for index in range(fixThisIndex):
+            # 0 1 2 3 4 
+            if nums[index] > maxEle:
+                maxEleIndex = index 
+                maxEle = nums[index]
+        if fixThisIndex != maxEleIndex:
+            temp = nums[maxEleIndex]
+            nums[maxEleIndex] = nums[fixThisIndex]
+            nums[fixThisIndex] = temp
+ 
+        print(nums)
+ 
+ 
+ 
+# Before sorting:
+# [12, 2, 34, 20, 56, 43, 45, 100, 89, 50]
+# [12, 2, 34, 20, 56, 43, 45, 50, 89, 100]
+# [12, 2, 34, 20, 56, 43, 45, 50, 89, 100]
+# [12, 2, 34, 20, 50, 43, 45, 56, 89, 100]
+# [12, 2, 34, 20, 45, 43, 50, 56, 89, 100]
+# [12, 2, 34, 20, 43, 45, 50, 56, 89, 100]
+# [12, 2, 34, 20, 43, 45, 50, 56, 89, 100]
+# [12, 2, 20, 34, 43, 45, 50, 56, 89, 100]
+# [12, 2, 20, 34, 43, 45, 50, 56, 89, 100]
+# [2, 12, 20, 34, 43, 45, 50, 56, 89, 100]
+# After sorting:
+# [2, 12, 20, 34, 43, 45, 50, 56, 89, 100]
+ 
+ 
+ 
+ 
+nums = [12, 2, 34, 20, 56, 43, 45, 100, 89, 50]
+ 
+print("Before sorting:")
+print(nums)
+ 
+# logic to perform sorting 
+ 
+performSelectionSort(nums)
+ 
+print("After sorting:")
+print(nums)
+ 
+ 
+
+insertion
+def insertSort(arr):
+    n = len(arr)
+    if n<= 1:
+         return 
+
+    for i in range(1,n):
+         key = arr[i]
+         j = i-1
+         while j >= 0 and key < arr[j]:
+             arr[j+1] = arr[j]
+             j -=1
+         arr[j+1] = key
+
+arr = [8,10,15,18,22]
+insertSort(arr)
+print(arr)
+
+
+
+
+@# Sortings 
+ 
+# 1. Bubble sort 
+# 2. Selection sort 
+# 3. Insertion sort 
+# 4. Merge sort 
+# 5. Quick sort 
+ 
+def performInsertionSort(nums):
+    n = len(nums)
+    # [12, 3, 10, 18, 9, 200, 167]
+    # n = 5
+    # 1 2 3 4
+    for index in range(1, n):
+        temp = nums[index]
+        position = index - 1 
+        while position >= 0 and nums[position] > temp:
+            nums[position + 1] = nums[position]
+            position -= 1 
+ 
+        nums[position + 1] = temp 
+        print(nums)
+ 
+#   Before sorting:
+# [12, 2, 34, 20, 56, 43, 45, 100, 89, 50]
+ 
+# [2, 12, 34, 20, 56, 43, 45, 100, 89, 50]
+# [2, 12, 34, 20, 56, 43, 45, 100, 89, 50]
+# [2, 12, 20, 34, 56, 43, 45, 100, 89, 50]
+# [2, 12, 20, 34, 56, 43, 45, 100, 89, 50]
+# [2, 12, 20, 34, 43, 56, 45, 100, 89, 50]
+# [2, 12, 20, 34, 43, 45, 56, 100, 89, 50]
+# [2, 12, 20, 34, 43, 45, 56, 100, 89, 50]
+# [2, 12, 20, 34, 43, 45, 56, 89, 100, 50]
+# [2, 12, 20, 34, 43, 45, 50, 56, 89, 100]
+ 
+# After sorting:
+# [2, 12, 20, 34, 43, 45, 50, 56, 89, 100] 
+ 
+ 
+ 
+ 
+ 
+ 
+nums = [12, 2, 34, 20, 56, 43, 45, 100, 89, 50]
+ 
+print("Before sorting:")
+print(nums)
+ 
+# logic to perform sorting 
+ 
+performInsertionSort(nums)
+ 
+print("After sorting:")
+print(nums)
+ 
+
+merge sort
+def mergeTwoArrays(left, mid, right, nums):
+    # sub-array-1 is [left, mid]
+    # sub-array-2 is [mid + 1, right]
+ index1 = left
+ index2 = mid + 1
+    index1 = left
+    index2 = mid + 1 
+    temp = []
+ 
+    while index1 <= mid and index2 <= right:
+        if nums[index1] > nums[index2]:
+            temp.append(nums[index2])
+            index2 += 1 
+        else:
+            temp.append(nums[index1])
+            index1 += 1 
+ 
+    while index1 <= mid:
+        temp.append(nums[index1])
+        index1 += 1 
+ 
+ 
+    while index2 <= right:
+        temp.append(nums[index2])
+        index2 += 1 
+ 
+    curr = 0
+    for position in range(left, right + 1):
+        nums[position] = temp[curr]
+        curr += 1 
+ 
+ 
+ 
+def divideIt(left, right, nums):
+    #print(left, "-", right)
+    if left >= right:
+        return
+ 
+    mid = (left + right) // 2
+    divideIt(left, mid, nums)
+    divideIt(mid + 1, right, nums)
+    mergeTwoArrays(left, mid, right, nums)
+ 
+nums = [12, 10, 3, 34, 11, 40, 24]
+print("Before", nums)
+divideIt(0, len(nums) - 1, nums)
+print("After", nums)
+ 
+ 
+ 
+quick sort
+
+
+def findPivotIndex(nums, left, right):
+    # storing the pivot here 
+    pivot = nums[right]
+ 
+    # 3-steps:
+    # step-1: Moving pivot element to its actual position 
+    # step-2: Moving all smaller elements to left side of pivot 
+    # step-3: Moving all greater elements to right side of pivot 
+ 
+    # left = 4 
+    # right = 9
+    # [18, 10, 20, 15, 100, 90, 17]
+    #  0   1    2   3   4   5    6
+ 
+    # [10, 15, 18, 20, 100, 90, 17]
+    # [10, 15, 17, 20, 100, 90, 18]
+    position = left 
+ 
+    # index --> 0 1 2 3 4 5 
+    for index in range(left, right):
+        if nums[index] < pivot:
+            temp = nums[position]
+            nums[position] = nums[index]
+            nums[index] = temp 
+            position += 1 
+ 
+    temp = nums[right]
+    nums[right] = nums[position]
+    nums[position] = temp 
+    return position
+ 
+ 
+def performQuickSort(nums, left, right):
+    # left = 0    right = 7 
+    if left >= right:
+        # whenever there are single length arrays, they are already sorted
+        return 
+    # [18, 10, 20, 15, 100, 90, 17]
+    #  0   1    2   3   4   5    6
+    pivotIndex = findPivotIndex(nums, left, right)
+    # [10, 15, 17, 20, 100, 90, 18]
+    print(nums)
+ 
+    performQuickSort(nums, left, pivotIndex - 1)
+    performQuickSort(nums, pivotIndex + 1, right)
+ 
+#nums = [10, 5, 100, 50, 25, 80, 110, 108]
+nums = [10, 9, 8, 7, 6, 5, 4, 3, 2, 1]
+# n = 8
+n = len(nums)
+print("Before sorting", nums)
+ 
+performQuickSort(nums, 0, n - 1)
+ 
+print("After sorting", nums)
+
+
+
+@selection sort
+
+
+def performSelectionSort(nums):
+    n = len(nums)
+    for fixThisIndex in range(n - 1, 0, -1):
+        maxEle = nums[fixThisIndex]
+        maxEleIndex = fixThisIndex 
+         
+    for index in range(fixThisIndex):
+         if nums[index] > maxEle:
+             maxEleIndex = index 
+             maxEle = nums[index]
+    if fixThisIndex != maxEleIndex:
+        temp = nums[maxEleIndex]
+        nums[maxEleIndex] = nums[fixThisIndex]
+        nums[fixThisIndex] = temp
+
+n = int(input())
+nums = list(map(int, input().split()))
+performSelectionSort(nums)
+ 
+
+
+
+problems
+Easy:
+23165 
+max_digit: 6 
+min_digit: 1 
+ 
+Solution:
+word = input()
+l = list(word)
+l = list(map(int, l))
+print("max_digit", max(l))
+print("min_digit", min(l))
+ 
+Medium:
+string1: "malyalam"
+string2: "lyamaaml"
+(anagram --):
+    1. both strings should be of same length 
+    2. all characters present in string-1 should be present in string-2 
+ 
+Input:  
+string1: "abcd"
+string2: "pabc"
+ 
+Output:
+Both strings are anagrams to each other
+Both strings are not anagrams to each other
+ 
+ 
+Solution:
+word1 = input()
+word2 = input()
+ 
+word1 = sorted(word1)
+word2 = sorted(word2)
+if word1 == word2:
+    print("Anagrams")
+else:
+    print("Not a anagrams")
+ 
+ 
+ 
+ 
+ 
+
+ 
