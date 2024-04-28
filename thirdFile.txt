@@ -1,0 +1,2 @@
+f = open("groups.txt","w")
+print(f.readline[])
