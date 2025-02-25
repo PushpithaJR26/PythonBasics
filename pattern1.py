@@ -1,9 +1,7 @@
-n = int(input())
-val=1
-
-for i in range(n):
-    for j in range(i+1):
-        print("*", end = " ")
-        val = val+1
-    print()
-    
+row=4
+count=1
+for i in range(1,row+1):
+    for j in range(i):
+        print(count,end=" ")
+        count+=1
+    print()    

@@ -1,15 +1,5 @@
-n = int(input())
-spaces = n - 1
-stars = 1
-
-
-for row in range(1, n + 1):
-   for space in range(spaces):
-       print(" ", end = "")
-      
-   spaces -= 1
-  
-   for star in range(stars):
-       print("*", end = "")
-   stars += 1
-   print()
+for i in range(1,6):
+    for j in range(65,65+i):
+        a=chr(j)
+        print(a,end=" ")
+    print()

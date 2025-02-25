@@ -1,6 +1,11 @@
-n = int(input())
-for row in range(1, n + 1):
-   for col in range(1, row + 1):
-       print(col, end = "")
-   print()
+def print_pattern(n):
+    num=1
+    for i in range(1,n+1):
+        print(" "*(n-i),end=" ")
+        for j in range(i):
+            print(num,end=" ")
+            num+=1
+        print()
 
+rows=4
+print_pattern(rows)
